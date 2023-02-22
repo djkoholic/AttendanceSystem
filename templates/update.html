@@ -1,0 +1,12 @@
+{% extends "index.html" %} {% block body %}
+{% if not message %}
+<form action="update/{{user.id}}", enctype="multipart/form-data" method="POST">
+    ID: <input type="text" name="id" value="{{user.id}}"/>
+    Name: <input type="text" name="name" value="{{user.name}}" />
+    Email: <input type="text" name="email" value="{{user.email}}" />
+    <input type="submit" value="Update" />
+</form>
+{% else %}
+<div>{{message}}</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "index.html" %} {% block body %}
+    <form action="register", enctype="multipart/form-data" method="POST">
+        ID: <input type="text" name="id"/>
+        Name: <input type="text" name="name"/>
+        Email: <input type="text" name="email"/>
+        Image: <input type="file" name="file">
+        <input type="submit" />
+    </form>
+    <div>
+        {% if created %}
+            User created successfully!!
+        {% endif %}
+    </div>
+{% endblock %}

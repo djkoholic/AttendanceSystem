@@ -1,0 +1,22 @@
+{% extends "index.html" %} {% block body %}
+    <form action="recognize", enctype="multipart/form-data" method="POST">
+        Image: <input type="file" name="file">
+        <input type="submit" />
+    </form>
+    {% if not get %}
+        {% if not user %}
+            <div>User not found</div>
+        {% else %}
+            <div>Id: {{user.id}}</div>
+            <div>Name: {{user.name}}</div>
+            <div>Email: {{user.email}}</div>
+            <form action="delete/{{user.id}}" enctype="multipart/form-data" method="post">
+                <div><input type="submit" value="Delete" /></div>
+            </form>
+            <form action="get_update/{{user.id}}" enctype="multipart/form-data" method="post">
+                <div><input type="submit" value="Update" /></div>
+            </form>
+
+        {% endif %}
+    {% endif %}
+{% endblock %}

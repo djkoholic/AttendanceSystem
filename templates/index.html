@@ -1,0 +1,15 @@
+<html>
+<head>
+    <title>Attendance</title>
+</head>
+<body>
+    <a href="/register">Register</a>
+    <a href="/recognize">Recognize</a>
+    <div>
+        {% if message %}
+            {{message}}
+        {% endif %}
+    </div>
+    <div>{% block body %} {% endblock %}</div>
+</body>
+</html>
